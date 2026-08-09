@@ -3,14 +3,14 @@ class Solution {
         int target[]=new int[nums.length];
 
         for(int i=0;i<nums.length;i++){
-            int curr=index[i];
+            
 
               //shift element left to right
-            for(int j=i;j>curr;j--){
+            for(int j=i;j>index[i];j--){
                 target[j]=target[j-1];
             }
 
-            target[curr]=nums[i];
+            target[index[i]]=nums[i];
 
         }
 
