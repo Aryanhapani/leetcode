@@ -17,7 +17,7 @@ class Solution {
            leftsum=leftsum+arr[i];
 
        }
-        System.out.println(Arrays.toString(ans));
+       
        
        return ans;
     }
