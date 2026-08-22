@@ -12,8 +12,8 @@ class Solution {
 
 
                int t = mat[i][left];
-               mat[i][left] = mat[i][right];
-               mat[i][right] = t;
+               mat[i][left] =1- mat[i][right];
+               mat[i][right] =1- t;
                left++;
                right--;
 
@@ -21,17 +21,7 @@ class Solution {
            }
        }
 
-    for(int k=0;k<row;k++){
-        for(int j=0;j<col;j++){
-            if(mat[k][j]==0){
-                mat[k][j]=1;
-            }else{
-                mat[k][j]=0;
-            }
-//System.out.print(mat[k][j]+" ");
-        }
-       // System.out.println(" ");
-    }
+   
 
         return mat;
     }
