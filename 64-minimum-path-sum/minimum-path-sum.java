@@ -3,7 +3,7 @@ class Solution {
         int row=mat.length;
         int col=mat[0].length;
 
-        int sum=0;
+        
         for(int i=1;i<col;i++){
             mat[0][i]=mat[0][i]+mat[0][i-1];
         }
