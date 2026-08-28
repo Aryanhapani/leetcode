@@ -1,33 +1,30 @@
 class Solution {
     public void sortColors(int[] arr) {
-        int zerocount=0;
-        int onecount=0;
-        int twocount=0;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i]==0){
-                zerocount++;
-            }
-             if(arr[i]==1){
-                onecount++;
-            }
-            if(arr[i]==2){
-                twocount++;
-            }
+       int zerocount=0;
+       int onecount=0;
+       for(int i=0;i<arr.length;i++){
+        if(arr[i]==0){
+            zerocount++;
         }
-        int k=0;
-        for(int i=0;i<zerocount;i++){
-            arr[k]=0;
-            k++;
+        if(arr[i]==1){
+            onecount++;
         }
+    
+       }
+        
+        //for 0
+       for(int i=0;i<zerocount;i++){
+        arr[i]=0;
+       }
 
-        for(int j=0;j<onecount;j++){
-            arr[k]=1;
-            k++;
-        }
+       //for 1
+       for(int i=zerocount;i<zerocount+onecount;i++){
+        arr[i]=1;
+       }
 
-        for(int l=0;l<twocount;l++){
-            arr[k]=2;
-            k++;
-        }
+       //for 2
+       for(int i=zerocount+onecount;i<arr.length;i++){
+        arr[i]=2;
+       }
     }
 }
