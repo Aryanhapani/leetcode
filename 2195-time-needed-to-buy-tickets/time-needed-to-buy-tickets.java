@@ -1,39 +1,46 @@
 class Solution {
     public int timeRequiredToBuy(int[] tickets, int k) {
-        Queue<int[]> q = new LinkedList<>();
 
+        Queue<Integer> q = new LinkedList<>();
+        int n=tickets.length;
 
         for(int i=0;i<tickets.length;i++){
-            q.add(new int[]{i,tickets[i]});
+            q.add(tickets[i]);
         }
 
 
         int count=0;
 
+        while(!q.isEmpty()){
+            int ticket=q.poll();
 
-        while(true){
-
-
-            if(q.peek()[1] > 0){
-                int[] frontelement=q.poll();
-
-                frontelement[1]=frontelement[1]-1;
-
+            if(k==0 && ticket==1){
                 count++;
-
-                if(frontelement[1]==0 && frontelement[0]==k){
-                    break;
+                break;
+            }else if(k==0 && ticket > 1){
+                q.add(--ticket);
+                k=n-1;
+                count++;
+            }else{
+                if(ticket==1){
+                    count++;
+                    k--;
+                    n=n-1;
+                }else{
+                    q.add(--ticket);
+                    k--;
+                    count++;
                 }
-
-
-                if(frontelement[1] > 0){
-                    q.add(frontelement);
-                }
-
-
             }
+
         }
 
-        return count;
+            return count;
+        
+
+
+      
+
+    
     }
 }
