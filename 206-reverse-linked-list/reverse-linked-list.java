@@ -15,35 +15,21 @@ class Solution {
             return head;
         }
 
-        Stack<ListNode> stack=new Stack<>();
+        ListNode prev=null,curr=head,next;
 
-        ListNode temp = head;
+        while(curr != null){
 
-        while(temp != null){
-            stack.push(temp);
+            next=curr.next;
 
-            temp=temp.next;
-        }
+            curr.next=prev;
 
-        if(!stack.isEmpty()){
-            head=stack.pop();
-            temp=head;
+            prev=curr;
 
-
-            while(!stack.isEmpty()){
-                temp.next=stack.pop();
-
-                temp=temp.next;
-            }
-
-            temp.next=null;
-        }
+            curr=next;
+        }    
 
 
-        return head;
-
-    
-
+     return prev;
         
         
     }
