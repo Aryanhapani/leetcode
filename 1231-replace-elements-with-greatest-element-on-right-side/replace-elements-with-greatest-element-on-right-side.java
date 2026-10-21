@@ -3,15 +3,14 @@ class Solution {
 
         int[] res=new int[arr.length];
 
-    for (int i=0;i<arr.length;i++) {
-        int max=arr[i];
-        for (int j=i+1;j<arr.length;j++) {
-            if(arr[j] > max){
-                max=arr[j];
-            }
+    int max=-1;
+
+    for (int i=arr.length-1;i>=0;i--) {
+        if (arr[i]>max) {
+            max=arr[i];
         }
-            res[i]=max;
-            
+
+        res[i]=max;
     }
 
         for (int i=0;i<arr.length-1;i++) {
