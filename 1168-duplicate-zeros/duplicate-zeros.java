@@ -1,27 +1,21 @@
 class Solution {
     public void duplicateZeros(int[] arr) {
 
-          Queue<Integer> q=new LinkedList<>();
 
-        for (int i=0;i<arr.length;i++) {
+       int j=0;
 
-            q.add(arr[i]);
-
-            if (arr[i]==0 && q.size() < arr.length){
-                q.add(0);
+       while(j < arr.length){
+        if(arr[j]==0){
+            for(int k=arr.length-1;k>j;k--){
+                arr[k]=arr[k-1];
             }
 
-           if (arr.length==q.size()){
-               break;
-           }
+            j++;
         }
 
-        int i=0;
-       while (!q.isEmpty()){
-           arr[i]=q.poll();
-           i++;
+
+        j++;
        }
-        
-        
+
     }
 }
