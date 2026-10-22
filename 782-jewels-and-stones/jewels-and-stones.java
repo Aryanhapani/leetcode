@@ -1,8 +1,7 @@
 class Solution {
     public int numJewelsInStones(String jewels, String stones) {
 
-          HashMap<Character,Integer> h=new HashMap<>();
-
+          
 
            HashSet<Character> set=new HashSet<>();
 
