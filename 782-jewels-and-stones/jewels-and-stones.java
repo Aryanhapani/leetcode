@@ -4,28 +4,21 @@ class Solution {
           HashMap<Character,Integer> h=new HashMap<>();
 
 
-           for(int i=0;i<stones.length();i++){
-            char c=stones.charAt(i);
+           HashSet<Character> set=new HashSet<>();
 
-            if(h.containsKey(c)){
-                h.put(c,h.get(c)+1);
-            }else{
-                h.put(c,1);
+        for (int i=0;i<jewels.length();i++) {
+            char ch=jewels.charAt(i);
+
+            set.add(ch);
+        }
+
+        int count=0;
+        for (int i=0;i<stones.length();i++) {
+            char ch=stones.charAt(i);
+            if (set.contains(ch)) {
+                count++;
             }
-           }
-
-
-
-           int count=0;
-
-           for(int i=0;i<jewels.length();i++){
-               char c=jewels.charAt(i);
-                           
-                if(h.containsKey(c)){
-                    count += h.get(c);
-                }
-
-           }
+        }
         return count;
     }
 }
