@@ -1,12 +1,16 @@
 class Solution {
     public static boolean convert(String s,HashSet<Character> hset){
-      HashSet hst=new HashSet<>();
-
+     
       for(int i=0;i<s.length();i++){
-        hst.add(s.charAt(i));
-      }
 
-      return hset.containsAll(hst);
+        if(!hset.contains(s.charAt(i))){
+            return false;
+        }
+
+        
+      }
+        return true;
+
     }
     public int countConsistentStrings(String allowed, String[] words) {
         HashSet<Character> hset=new HashSet<>();
