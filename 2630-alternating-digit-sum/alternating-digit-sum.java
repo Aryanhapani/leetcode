@@ -1,23 +1,18 @@
 class Solution {
     public int alternateDigitSum(int n) {
-           ArrayList<Integer> list = new ArrayList<>();
-        
-        while (n>0) {
-            list.add(n%10);
-            n=n/10;
-        }
-        System.out.println(list);
+         
+        String str=String.valueOf(n);
 
         int sum=0;
 
-        int count=1;
-        for (int i= list.size()-1;i>=0;i--) {
-            if (count%2==0) {
-                sum-=list.get(i);
+        for (int i = 0; i < str.length(); i++) {
+            int ch=str.charAt(i)-'0';
+
+            if (i%2==0){
+                sum+=ch;
             }else{
-                sum+=list.get(i);
+                sum-=ch;
             }
-            count++;
         }
         return sum;
     }
