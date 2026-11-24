@@ -12,13 +12,11 @@ class Solution {
                     return false;
                 }else{
 
-                    char popedchar=stack.peek();
+                    char popedchar=stack.pop();
 
-                    if(popedchar=='{' && ch=='}' ||
-                     popedchar=='[' && ch==']' ||
-                     popedchar=='(' && ch==')'){
-                        stack.pop();
-                     }else{
+                    if(popedchar=='{' && ch!='}' ||
+                     popedchar=='[' && ch!=']' ||
+                     popedchar=='(' && ch!=')'){
                         return false;
                      }
                 }
